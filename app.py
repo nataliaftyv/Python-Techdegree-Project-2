@@ -2,8 +2,6 @@ from constants import PLAYERS, TEAMS
 import copy
 import sys
 
-# I am going for 'Exceeds' but I would be happy to pass with 'Meets'
-
 players = copy.deepcopy(PLAYERS)
 teams = copy.deepcopy(TEAMS)
 
@@ -44,8 +42,10 @@ def balance_teams(list_players, list_teams):
     team_size = int(len(list_players) / len(list_teams))
     teams_dict = {}
     for i in range(len(list_teams)):
-        split_team = list_players[i: i + team_size]
+        split_team = list_players[0: team_size]
         teams_dict[list_teams[i]] = split_team
+        del list_players[0: team_size]
+        # remove new player list from originally passed player list to avoid player overlap for next loop iteration
     return teams_dict
 
 
