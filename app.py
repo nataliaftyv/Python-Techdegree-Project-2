@@ -115,7 +115,7 @@ def display_main_menu():
 
 
 if __name__ == "__main__":
-    clean_data(players)
+    #clean_data(players)
 
     final_teams_dict = balance_teams(players, teams)
 
